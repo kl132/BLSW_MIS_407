@@ -10,6 +10,16 @@ See MS Word document
 See MS Excel sheet 
 
 3)Develop an interesting question that you may frame based on the types of data available.
+Question:
+How have different types of energy increased or decreased throughout the years?  
+  -	Possible option: 
+    o	Store as var emissions for energy types and plot the CO2 emissions throughout the years
+      •	Y: emissions
+      •	X: years
+    o	Pull another data source to analyze CO2 emissions based on a set population per year
+      •	Y: emissions
+      •	X: years
+      •	Plot each data source vs. each other
 
 
 4)What specific data source(s) would you choose?
