@@ -16,7 +16,7 @@ How have different types of energy increased or decreased throughout the years?
     o	Store as var emissions for energy types and plot the CO2 emissions throughout the years
       •	Y: emissions
       •	X: years
-    o	Pull another data source to analyze CO2 emissions based on a set population per year
+    o	Pull another data source to analyze CO2 emissions based on a set population per year (WE HAVE NOT FOUND THIS DATA SOURCE)
       •	Y: emissions
       •	X: years
       •	Plot each data source vs. each other
