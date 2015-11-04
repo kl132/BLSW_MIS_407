@@ -1,44 +1,47 @@
 Tasks:
 1)Create your project team. You may have either 3 or 4 members in your team.
-- Tom Brix
-- Kimberly Larson
-- Ryan Smith
-- Michael Wolf
+  - Tom Brix
+  - Kimberly Larson
+  - Ryan Smith
+  - Michael Wolf
 
 2)Explore the different open data sources and identify them. Create a list.
-- See Open Source Data (1) (2).docx on Master
+  - See Open Source Data (1) (2).docx on Master
 
 3)Develop an interesting question that you may frame based on the types of data available.
-Question:
-How have different types of energy increased or decreased throughout the years?  
-  -	Possible option: 
-    o	Store as var emissions for energy types and plot the CO2 emissions throughout the years
-      •	Y: emissions
-      •	X: years
-    o	Pull another data source to analyze CO2 emissions based on a set population per year (WE HAVE NOT FOUND THIS DATA SOURCE)
-      •	Y: emissions
-      •	X: years
-      •	Plot each data source vs. each other
+  Question:
+  How have different types of energy increased or decreased throughout the years?  
+    -	Possible option: 
+      o	Store as var emissions for energy types and plot the CO2 emissions throughout the years
+        •	Y: emissions
+        •	X: years
+      o	Pull another data source to analyze CO2 emissions based on a set population per year (WE HAVE NOT FOUND THIS DATA SOURCE)
+        •	Y: emissions
+        •	X: years
+        •	Plot each data source vs. each other
 
 4)What specific data source(s) would you choose?
-  - See Energy.xlsx on Master
-    - From data.gov
-    
+  - See Energy.xlsx on Master (from data.gov)
+  
 5)Read the data source(s) into appropriate DATAFRAME using pandas
+  import pandas as pd
+  
+  engery = pd.read_excel('Energy.xlxs')
+  
+  df = pd.DataFrame(energy)
 
-
+       #Refer to code 
+  
 6)Determine which columns from the source(s) would be used.
   Total Fossil Fuels Consumption
   Nuclear Electric Power Consumption
   Total Renewable Energy Consumption
   Total Primary Energy Consumption
   
-    #This is what we are planning on using at the moment
+  #This is what we are planning on using at the moment (changes may be made at a later time)
+  
 7)Develop an outline of tasks you will need to do to answer the question.
-  1)
-  2)
-  3)
-  4)
+  #Refer to code
 
 Deliverable:
 1)Each of the above tasks has one or more outcomes. Produce a report for each.
