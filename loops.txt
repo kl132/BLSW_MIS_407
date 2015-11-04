@@ -1,0 +1,16 @@
+int i = 0;
+if(i<10)
+{
+System.out.prinln(i+"Mississippi");
+i = i+1;
+}
+
+
+int i = 0;
+while(i<10)
+{
+System.out.println(i+"Mississippi");
+i=i+1;
+}
+
+
