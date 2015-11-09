@@ -34,13 +34,63 @@ Process to Solve our Question:
     #new column possibly?
 
 import pandas as pd
+import matplotlib.pyplot as plt
 import seaborn as sb
 #Open the data source
 
 energy = pd.read_excel('/Users/tombrix/Desktop/Fall 2015/Group Project 407/Energy.xlsx')
 
 df = pd.DataFrame(energy)
-print(df)
+#print(df)
+
+
+x = df['Month']
+nuclearPower = df['Nuclear Electric Power Production']
+fossilPower = df['Total Fossil Fuels Production']
+renewablePower = df['Total Renewable Energy Production']
+#Possibly use totalPower to define each of the powers as a % of a pie plot?
+totalPower = df['Total Primary Energy Production']
+
+'''
+Averaging columns
+
+Averaging the columns is the difficulty:
+We are unable to pull values from the loop to average the 
+12 values for each month (a whole year)...
+
+
+
+
+'''
+avg=0
+nuclearList=[] #declaring the list for values
+print('Averaging the Values: ')
+for i in nuclearPower: #all rows needs to be at the end i=i +12
+    if i >= 24: #Likely issue
+    
+        for num in range(0,12):# averaging the values is this loop's purpose for nuclear
+            avg += nuclearPower[i+num] #adding values i = base + num through the 12
+            print('This is functioning')#Test
+            
+        avg = avg / 12
+        nuclearList.append(avg)#adding values to the list
+        num=0
+        i = i+12
+        
+print('This is the Nuclear List Averaged: \n{}'.format(nuclearList))        
+        
+            
+            
+            
+
+
+
+'''
+fig = plt.figure()
+fig.add_subplot(111)
+plt.scatter(x, nuclearPower)
+plt.show()
+'''
 
 
 #energy.plot(bins = 35, kind = 'line', subplots = True)
