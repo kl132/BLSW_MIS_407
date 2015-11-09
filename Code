@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Nov  2 21:06:03 2015
+
+@author: tombrix
+"""
+'''
+Problem:
+
+How have different types of energy increased or decreased throughout the years?  
+  -	Possible Future Options: 
+    o	Store as var emissions for energy types and plot the CO2 emissions throughout the years
+      •	Y: emissions
+      •	X: years
+    o	Pull another data source to analyze CO2 emissions based on a set population per year (WE HAVE NOT FOUND THIS DATA SOURCE)
+      •	Y: emissions
+      •	X: years
+      •	Plot each data source vs. each other
+'''
+
+'''
+Process to Solve our Question:
+'''
+#We cannot groupby anything
+
+#The plot would mostly benefit from a line graph possibly a pie chart
+    #Plot using pandas or seaborn
+
+#We need a df to analyze energy usage of a type vs the total amount consumed per year
+    #Index by date?
+
+
+#Average energy used for entire years then index by year
+    #new column possibly?
+
+import pandas as pd
+import seaborn as sb
+#Open the data source
+
+energy = pd.read_excel('/Users/tombrix/Desktop/Fall 2015/Group Project 407/Energy.xlsx')
+
+df = pd.DataFrame(energy)
+print(df)
+
+
+#energy.plot(bins = 35, kind = 'line', subplots = True)
