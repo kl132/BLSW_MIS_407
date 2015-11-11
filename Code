@@ -41,7 +41,7 @@ import seaborn as sb
 energy = pd.read_excel('/Users/tombrix/Desktop/Fall 2015/Group Project 407/Energy.xlsx')
 
 df = pd.DataFrame(energy)
-#print(df)
+print(df)
 
 
 x = df['Month']
@@ -62,11 +62,15 @@ We are unable to pull values from the loop to average the
 
 
 '''
+
+"""
 avg=0
+i=24
 nuclearList=[] #declaring the list for values
 print('Averaging the Values: ')
 for i in nuclearPower: #all rows needs to be at the end i=i +12
-    if i >= 24: #Likely issue
+    print('the value of i={}'.format(i))
+    if i < 23: #Likely issue
     
         for num in range(0,12):# averaging the values is this loop's purpose for nuclear
             avg += nuclearPower[i+num] #adding values i = base + num through the 12
@@ -75,15 +79,63 @@ for i in nuclearPower: #all rows needs to be at the end i=i +12
         avg = avg / 12
         nuclearList.append(avg)#adding values to the list
         num=0
-        i = i+12
+        i += 12
         
-print('This is the Nuclear List Averaged: \n{}'.format(nuclearList))        
+print('This is the Nuclear List Averaged: \n{}'.format(nuclearList))     
+#print(nuclearList.count)   
+"""
+
+i=24
+n=0
+j=0
+value =0
+average = []
+nuclearList=[]
+mainBool = True
+minBool = True
+
+'''
+while mainBool:
+    if(i%12==0):
+        while minBool:
+            value += nuclearPower[j]
+            j+=1
+            if(nuclearPower[-1] == True):
+                average.append(value / 12)
+        nuclearList = []
+        
+    nuclearList.append(nuclearPower[n])
+    n+=1
+        '''
         
             
-            
-            
+#all values below 1975 removed from list            
+for i in range(25,len(nuclearPower)):
+    nuclearList.append(nuclearPower[i])
+    
+
+#1 year increment of nuclearPower    
+for i in range(0,len(nuclearList)-12,12):
+    value = 0
+    for j in range(12):
+        value += nuclearList[i+j]
+    average.append(value/12)    
+
+print(average)
+print(len(average))
 
 
+#5 year increment of nuclearPower
+average5 = []
+for i in range(0,len(average),5):
+    value = 0
+    for j in range(5):
+        value += average[i+j]
+    average5.append(value/5)    
+
+print('The average values per 5 years')
+print(average5)
+print('The length of the list is: {}'.format(len(average5)))
 
 '''
 fig = plt.figure()
