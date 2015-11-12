@@ -91,6 +91,9 @@ j=0
 value =0
 average = []
 nuclearList=[]
+fossilList=[]
+renewableList = []
+totalList = []
 mainBool = True
 minBool = True
 
@@ -107,13 +110,36 @@ while mainBool:
     nuclearList.append(nuclearPower[n])
     n+=1
         '''
-        
-            
+#all values below 1975 removed from list            
+for i in range(25,len(fossilPower)):
+    fossilList.append(fossilPower[i])
+    
+#1 year increment of fossilPower    
+for i in range(0,len(fossilList)-12,12):
+    value = 0
+    for j in range(12):
+        value += fossilList[i+j]
+    average.append(value/12)    
+
+print(average)
+print(len(average))
+
+#5 year increment of fossilPower
+averageN = []
+for i in range(0,len(average),5):
+    value = 0
+    for j in range(5):
+        value += average[i+j]
+    averageN.append(value/5)    
+
+print('The average values per 5 years for Fossil Power is:')
+print(averageN)
+print('The length of the list is: {}'.format(len(averageN)))
+
 #all values below 1975 removed from list            
 for i in range(25,len(nuclearPower)):
-    nuclearList.append(nuclearPower[i])
+    fossilList.append(nuclearPower[i])
     
-
 #1 year increment of nuclearPower    
 for i in range(0,len(nuclearList)-12,12):
     value = 0
@@ -124,18 +150,69 @@ for i in range(0,len(nuclearList)-12,12):
 print(average)
 print(len(average))
 
-
 #5 year increment of nuclearPower
-average5 = []
+averageN = []
 for i in range(0,len(average),5):
     value = 0
     for j in range(5):
         value += average[i+j]
-    average5.append(value/5)    
+    averageN.append(value/5)    
 
-print('The average values per 5 years')
-print(average5)
-print('The length of the list is: {}'.format(len(average5)))
+print('The average values per 5 years for Nucleaer Power')
+print(averageN)
+print('The length of the list is: {}'.format(len(averageN)))
+
+#all values below 1975 removed from list            
+for i in range(25,len(renewablePower)):
+    fossilList.append(renewablePower[i])
+    
+#1 year increment of renewablePower    
+for i in range(0,len(renewableList)-12,12):
+    value = 0
+    for j in range(12):
+        value += renewableList[i+j]
+    average.append(value/12)    
+
+print(average)
+print(len(average))
+
+#5 year increment of renewablePower
+averageN = []
+for i in range(0,len(average),5):
+    value = 0
+    for j in range(5):
+        value += average[i+j]
+    averageN.append(value/5)    
+
+print('The average values per 5 years for Renewable Power')
+print(averageN)
+print('The length of the list is: {}'.format(len(averageN)))
+
+#all values below 1975 removed from list            
+for i in range(25,len(totalPower)):
+    fossilList.append(totalPower[i])
+    
+#1 year increment of totalLPower    
+for i in range(0,len(totalList)-12,12):
+    value = 0
+    for j in range(12):
+        value += totalList[i+j]
+    average.append(value/12)    
+
+print(average)
+print(len(average))
+
+#5 year increment of totalPower
+averageN = []
+for i in range(0,len(average),5):
+    value = 0
+    for j in range(5):
+        value += average[i+j]
+    averageN.append(value/5)    
+
+print('The average values per 5 years for Total Power')
+print(averageN)
+print('The length of the list is: {}'.format(len(averageN)))
 
 '''
 fig = plt.figure()
@@ -143,6 +220,4 @@ fig.add_subplot(111)
 plt.scatter(x, nuclearPower)
 plt.show()
 '''
-
-
 #energy.plot(bins = 35, kind = 'line', subplots = True)
