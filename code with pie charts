@@ -1,0 +1,194 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+
+energy = pd.read_excel('/Users/kimberlylarson/Desktop/Energy (1).xlsx')
+
+df = pd.DataFrame(energy)
+#print(df)
+
+x = df['Month']
+nuclearPower = df['Nuclear Electric Power Production']
+fossilPower = df['Total Fossil Fuels Production']
+renewablePower = df['Total Renewable Energy Production']
+totalPower = df['Total Primary Energy Production']
+
+i=24
+n=0
+j=0
+value =0
+average = []
+average1 = []
+average2 = []
+average3 = []
+averageN = []
+average1N = []
+average2N = []
+average3N = []
+nuclearList=[]
+fossilList=[]
+renewableList = []
+totalList = []
+mainBool = True
+minBool = True
+
+labels = 'Fossil Power', 'Nuclear Power', 'Renwable Power', 'Total Power'
+color = ['orange', 'yellow', 'lightskyblue', 'yellowgreen']
+size_75 = [4.6337069833333331, 0.20957526666666668, 0.39729533333333339, 5.2405775833333337]
+size_80 = [4.8002727666666676, 0.26336619999999999, 0.49719006666666665, 5.560829]
+size_85 = [4.7824784666666664, 0.40996054999999998, 0.49111261666666667, 5.6835518333333335]
+size_90 = [4.795456183333334, 0.53653871666666664, 0.50011596666666658 , 5.8321109333333343]
+size_95 = [4.8590052999999997, 0.59182694999999996, 0.55981996666666667, 6.0106522]
+size_00 = [4.743989533333334, 0.67016293333333332, 0.48411743333333329, 5.8982698833333336]
+size_05 = [4.6948916333333326, 0.69409180000000004, 0.57196840000000004, 5.9609516833333336]
+size_10 = [5.2662819333333335, 0.68925825000000007, 0.75388785000000003, 6.7094280499999996]
+
+explode = (0, 0, 100, 100)
+the_grid = GridSpec(2, 4)
+            
+#FOSSIL POWER           
+for i in range(25,len(fossilPower)):
+    fossilList.append(fossilPower[i])
+    
+#every year  
+for i in range(0,len(fossilList)-12,12):
+    value = 0
+    for j in range(12):
+        value += fossilList[i+j]
+    average.append(value/12)    
+
+print('The average value each year for Fossil Power')
+print(average)
+print(len(average))
+
+#every 5 years
+for i in range(0,len(average),5):
+    value = 0
+    for j in range(5):
+        value += average[i+j]
+    averageN.append(value/5)    
+
+print('The average values every 5 years for Fossil Power is:')
+print(averageN)
+print('The length of the list is: {}'.format(len(averageN)))
+##
+
+print('\n')
+
+#NUCLEAR POWER           
+for i in range(25,len(nuclearPower)):
+    nuclearList.append(nuclearPower[i])
+  
+#every year 
+for i in range(0,len(nuclearList)-12,12):
+    value = 0
+    for j in range(12):
+        value += nuclearList[i+j]
+    average1.append(value/12)    
+
+print('The average value each year for Nuclear Power')
+print(average1)
+print(len(average1))
+
+#every 5 years 
+average1N = []
+for i in range(0,len(average1),5):
+    value = 0
+    for j in range(5):
+        value += average1[i+j]
+    average1N.append(value/5)    
+
+print('The average values every 5 years for Nuclear Power is:')
+print(average1N)
+print('The length of the list is: {}'.format(len(average1N)))
+##
+
+print('\n')
+
+#RENEWABLE POWER            
+for i in range(25,len(renewablePower)):
+    renewableList.append(renewablePower[i])
+    
+#every year 
+for i in range(0,len(renewableList)-12,12):
+    value = 0
+    for j in range(12):
+        value += renewableList[i+j]
+    average2.append(value/12)    
+
+print('The average value each year for Renewable Power')
+print(average2)
+print(len(average2))
+
+#every 5 years 
+average2N = []
+for i in range(0,len(average2),5):
+    value = 0
+    for j in range(5):
+        value += average2[i+j]
+    average2N.append(value/5)    
+
+print('The average values every 5 years for Renewable Power is:')
+print(average2N)
+print('The length of the list is: {}'.format(len(average2N)))
+##
+
+print('\n')
+
+#TOTAL POWER            
+for i in range(25,len(totalPower)):
+    totalList.append(totalPower[i])
+  
+for i in range(0,len(totalList)-12,12):
+    value = 0
+    for j in range(12):
+        value += totalList[i+j]
+    average3.append(value/12)    
+
+print('The average value each year for Total Power')
+print(average3)
+print(len(average3))
+
+average3N = []
+for i in range(0,len(average3),5):
+    value = 0
+    for j in range(5):
+        value += average3[i+j]
+    average3N.append(value/5)    
+
+print('The average values per 5 years for Total Power is:')
+print(average3N)
+print('The length of the list is: {}'.format(len(average3N)))
+##
+
+plt.subplot(the_grid[0, 0], aspect=1)
+plt.pie(size_75, labels=labels, autopct='%1.2f%%', shadow=True)
+plt.title('1975')
+
+plt.subplot(the_grid[0, 1], aspect=1)
+plt.pie(size_80, labels=labels, autopct='%.2f%%', shadow=True)
+plt.title('1980')
+
+plt.subplot(the_grid[0, 2], aspect=1)
+plt.pie(size_85, labels=labels, autopct='%.2f%%', shadow=True)
+plt.title('1985')
+
+plt.subplot(the_grid[0, 3], aspect=1)
+plt.pie(size_90, labels=labels, autopct='%.2f%%', shadow=True)
+plt.title('1990')
+
+plt.subplot(the_grid[1, 0], aspect=1)
+plt.pie(size_95, labels=labels, autopct='%.2f%%', shadow=True)
+plt.title('1995')
+
+plt.subplot(the_grid[1, 1], aspect=1)
+plt.pie(size_00, labels=labels, autopct='%.2f%%', shadow=True)
+plt.title('2000')
+
+plt.subplot(the_grid[1, 2], aspect=1)
+plt.pie(size_05, labels=labels, autopct='%.2f%%', shadow=True)
+plt.title('2005')
+
+plt.subplot(the_grid[1, 3], aspect=1)
+plt.pie(size_10, labels=labels, autopct='%.2f%%', shadow=True)
+plt.title('2010')
