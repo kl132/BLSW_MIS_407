@@ -32,19 +32,19 @@ totalList = []
 mainBool = True
 minBool = True
 
-labels = 'Fossil Power', 'Nuclear Power', 'Renwable Power', 'Total Power'
-color = ['orange', 'yellow', 'lightskyblue', 'yellowgreen']
-size_75 = [4.6337069833333331, 0.20957526666666668, 0.39729533333333339, 5.2405775833333337]
-size_80 = [4.8002727666666676, 0.26336619999999999, 0.49719006666666665, 5.560829]
-size_85 = [4.7824784666666664, 0.40996054999999998, 0.49111261666666667, 5.6835518333333335]
-size_90 = [4.795456183333334, 0.53653871666666664, 0.50011596666666658 , 5.8321109333333343]
-size_95 = [4.8590052999999997, 0.59182694999999996, 0.55981996666666667, 6.0106522]
-size_00 = [4.743989533333334, 0.67016293333333332, 0.48411743333333329, 5.8982698833333336]
-size_05 = [4.6948916333333326, 0.69409180000000004, 0.57196840000000004, 5.9609516833333336]
-size_10 = [5.2662819333333335, 0.68925825000000007, 0.75388785000000003, 6.7094280499999996]
+labels = 'F', 'N', 'R'
+colors = ['orange', 'turquoise', 'yellowgreen']
+size_75 = [4.6337069833333331, 0.20957526666666668, 0.39729533333333339]
+size_80 = [4.8002727666666676, 0.26336619999999999, 0.49719006666666665]
+size_85 = [4.7824784666666664, 0.40996054999999998, 0.49111261666666667]
+size_90 = [4.795456183333334, 0.53653871666666664, 0.50011596666666658]
+size_95 = [4.8590052999999997, 0.59182694999999996, 0.55981996666666667]
+size_00 = [4.743989533333334, 0.67016293333333332, 0.48411743333333329]
+size_05 = [4.6948916333333326, 0.69409180000000004, 0.57196840000000004]
+size_10 = [5.2662819333333335, 0.68925825000000007, 0.75388785000000003]
 
-explode = (0, 0, 100, 100)
-the_grid = GridSpec(2, 4)
+explode = (0, 0, 0, 0)
+the_grid = GridSpec(2,4)
             
 #FOSSIL POWER           
 for i in range(25,len(fossilPower)):
@@ -162,33 +162,41 @@ print('The length of the list is: {}'.format(len(average3N)))
 ##
 
 plt.subplot(the_grid[0, 0], aspect=1)
-plt.pie(size_75, labels=labels, autopct='%1.2f%%', shadow=True)
+plt.pie(size_75, labels=labels, colors=colors, autopct='%1.2f%%', 
+        shadow=True, startangle = 180)
 plt.title('1975')
 
 plt.subplot(the_grid[0, 1], aspect=1)
-plt.pie(size_80, labels=labels, autopct='%.2f%%', shadow=True)
+plt.pie(size_80, labels=labels, colors=colors, autopct='%.2f%%', 
+        shadow=True, startangle = 180)
 plt.title('1980')
 
 plt.subplot(the_grid[0, 2], aspect=1)
-plt.pie(size_85, labels=labels, autopct='%.2f%%', shadow=True)
+plt.pie(size_85, labels=labels, colors=colors, autopct='%.2f%%', 
+        shadow=True, startangle = 180)
 plt.title('1985')
 
 plt.subplot(the_grid[0, 3], aspect=1)
-plt.pie(size_90, labels=labels, autopct='%.2f%%', shadow=True)
+plt.pie(size_90, labels=labels, colors=colors, autopct='%.2f%%',
+        shadow=True, startangle = 180)
 plt.title('1990')
 
 plt.subplot(the_grid[1, 0], aspect=1)
-plt.pie(size_95, labels=labels, autopct='%.2f%%', shadow=True)
+plt.pie(size_95, labels=labels, colors=colors, autopct='%.2f%%', 
+        shadow=True, startangle = 180)
 plt.title('1995')
 
 plt.subplot(the_grid[1, 1], aspect=1)
-plt.pie(size_00, labels=labels, autopct='%.2f%%', shadow=True)
+plt.pie(size_00, labels=labels, colors=colors,  autopct='%.2f%%', 
+        shadow=True, startangle = 180)
 plt.title('2000')
 
 plt.subplot(the_grid[1, 2], aspect=1)
-plt.pie(size_05, labels=labels, autopct='%.2f%%', shadow=True)
+plt.pie(size_05, labels=labels, colors=colors, autopct='%.2f%%', 
+        shadow=True, startangle = 180)
 plt.title('2005')
 
 plt.subplot(the_grid[1, 3], aspect=1)
-plt.pie(size_10, labels=labels, autopct='%.2f%%', shadow=True)
+plt.pie(size_10, labels=labels, colors=colors, autopct='%.2f%%', 
+        shadow=True, startangle = 180)
 plt.title('2010')
